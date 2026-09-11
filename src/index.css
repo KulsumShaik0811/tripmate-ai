@@ -1260,338 +1260,7 @@ button {
   }
 }
 
-/* =========================
-   EXPLORE PAGE
-========================= */
 
-.explore-page {
-  min-height: calc(100vh - 72px);
-  padding: 55px 20px 75px;
-  background: #f8fbff;
-}
-
-.explore-container {
-  max-width: 1100px;
-  margin: 0 auto;
-}
-
-.explore-header {
-  text-align: center;
-  max-width: 700px;
-  margin: 0 auto 45px;
-}
-
-.explore-badge {
-  display: inline-flex;
-  align-items: center;
-
-  padding: 8px 15px;
-  border-radius: 999px;
-
-  background: #eaf2ff;
-  color: #155eef;
-
-  font-size: 13px;
-  font-weight: 700;
-
-  margin-bottom: 16px;
-}
-
-.explore-header h1 {
-  color: #172554;
-  font-size: 44px;
-  margin-bottom: 12px;
-}
-
-.explore-header > p {
-  color: #64748b;
-  font-size: 16px;
-  line-height: 1.6;
-}
-
-.explore-search {
-  max-width: 600px;
-  height: 54px;
-
-  margin: 28px auto 0;
-  padding: 0 16px;
-
-  display: flex;
-  align-items: center;
-  gap: 10px;
-
-  background: white;
-
-  border: 1px solid #dbe4f0;
-  border-radius: 14px;
-
-  color: #94a3b8;
-
-  box-shadow: 0 8px 25px rgba(30, 64, 175, 0.06);
-}
-
-.explore-search:focus-within {
-  border-color: #4d8dff;
-  box-shadow: 0 0 0 3px rgba(21, 94, 239, 0.1);
-}
-
-.explore-search input {
-  flex: 1;
-
-  height: 100%;
-
-  border: none;
-  outline: none;
-
-  background: transparent;
-
-  color: #172554;
-  font-size: 15px;
-}
-
-.explore-search input::placeholder {
-  color: #94a3b8;
-}
-
-.explore-search button {
-  border: none;
-  background: transparent;
-
-  color: #155eef;
-
-  font-size: 12px;
-  font-weight: 700;
-}
-
-/* Destination section */
-
-.explore-section-heading {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  margin-bottom: 20px;
-}
-
-.explore-section-heading h2 {
-  color: #172554;
-  font-size: 24px;
-  margin-bottom: 4px;
-}
-
-.explore-section-heading p {
-  color: #94a3b8;
-  font-size: 13px;
-}
-
-.destination-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-}
-
-.destination-card {
-  overflow: hidden;
-
-  background: white;
-
-  border: 1px solid #e5edf8;
-  border-radius: 18px;
-
-  box-shadow: 0 8px 25px rgba(30, 64, 175, 0.05);
-
-  transition: 0.2s;
-}
-
-.destination-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 35px rgba(30, 64, 175, 0.1);
-}
-
-.destination-image {
-  height: 190px;
-  position: relative;
-}
-
-.destination-image img {
-  width: 100%;
-  height: 100%;
-
-  object-fit: cover;
-  display: block;
-}
-
-.destination-style {
-  position: absolute;
-
-  top: 12px;
-  right: 12px;
-
-  padding: 6px 10px;
-
-  border-radius: 999px;
-
-  background: rgba(255, 255, 255, 0.94);
-  color: #155eef;
-
-  font-size: 11px;
-  font-weight: 700;
-}
-
-.destination-content {
-  padding: 18px;
-}
-
-.destination-title h3 {
-  color: #172554;
-  font-size: 19px;
-  margin-bottom: 5px;
-}
-
-.destination-title p {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-
-  color: #64748b;
-  font-size: 12px;
-}
-
-.destination-description {
-  min-height: 58px;
-
-  margin: 13px 0;
-
-  color: #64748b;
-
-  font-size: 12px;
-  line-height: 1.5;
-}
-
-.destination-budget {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-
-  margin-bottom: 14px;
-
-  color: #16834b;
-
-  font-size: 12px;
-  font-weight: 700;
-}
-
-.plan-destination-btn {
-  width: 100%;
-  height: 42px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 7px;
-
-  border: none;
-  border-radius: 10px;
-
-  background: #155eef;
-  color: white;
-
-  font-size: 13px;
-  font-weight: 700;
-
-  transition: 0.2s;
-}
-
-.plan-destination-btn:hover {
-  background: #0d4dcc;
-}
-
-/* Empty search */
-
-.explore-empty {
-  padding: 65px 20px;
-
-  text-align: center;
-
-  background: white;
-
-  border: 1px solid #e5edf8;
-  border-radius: 20px;
-}
-
-.explore-empty > div {
-  font-size: 35px;
-  margin-bottom: 12px;
-}
-
-.explore-empty h2 {
-  color: #172554;
-  font-size: 21px;
-  margin-bottom: 7px;
-}
-
-.explore-empty p {
-  color: #64748b;
-  font-size: 14px;
-  margin-bottom: 18px;
-}
-
-.explore-empty button {
-  border: none;
-  border-radius: 10px;
-
-  padding: 11px 16px;
-
-  background: #eaf2ff;
-  color: #155eef;
-
-  font-size: 13px;
-  font-weight: 700;
-}
-
-/* Explore responsive */
-
-@media (max-width: 950px) {
-  .destination-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 600px) {
-  .explore-page {
-    padding: 35px 15px 55px;
-  }
-
-  .explore-header h1 {
-    font-size: 34px;
-  }
-
-  .destination-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .destination-image {
-    height: 220px;
-  }
-}
-
-@media (max-width: 400px) {
-  .explore-header h1 {
-    font-size: 30px;
-  }
-
-  .explore-header > p {
-    font-size: 14px;
-  }
-
-  .explore-search {
-    height: 50px;
-  }
-
-  .destination-image {
-    height: 200px;
-  }
-}
 
 /* =========================
    SAVED TRIPS PAGE
@@ -1981,3 +1650,202 @@ button {
     font-size: 14px;
   }
 }
+
+/* =========================
+   EXPLORE PAGE
+========================= */
+
+.explore-page {
+  min-height: calc(100vh - 72px);
+  padding: 50px 7%;
+  background: #f7fbff;
+}
+
+.explore-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.explore-header h1 {
+  margin: 14px 0 10px;
+  font-size: 42px;
+  color: #12355b;
+}
+
+.explore-header p {
+  margin: 0;
+  color: #64748b;
+  font-size: 16px;
+}
+
+.explore-search {
+  width: 320px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 16px;
+  background: white;
+  border: 1px solid #dbe7f3;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(30, 90, 140, 0.08);
+}
+
+.explore-search svg {
+  color: #2584c6;
+  flex-shrink: 0;
+}
+
+.explore-search input {
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 15px;
+  color: #12355b;
+  background: transparent;
+}
+
+.explore-search input::placeholder {
+  color: #94a3b8;
+}
+
+/* Destination cards */
+
+.destination-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.destination-card {
+  overflow: hidden;
+  background: white;
+  border-radius: 18px;
+  border: 1px solid #e1edf7;
+  box-shadow: 0 8px 25px rgba(30, 90, 140, 0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.destination-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 35px rgba(30, 90, 140, 0.14);
+}
+
+.destination-image {
+  height: 210px;
+  overflow: hidden;
+}
+
+.destination-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.35s ease;
+}
+
+.destination-card:hover .destination-image img {
+  transform: scale(1.05);
+}
+
+.destination-content {
+  padding: 20px;
+}
+
+.destination-location {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #2584c6;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.destination-content h2 {
+  margin: 0 0 9px;
+  color: #12355b;
+  font-size: 22px;
+}
+
+.destination-content p {
+  min-height: 48px;
+  margin: 0 0 18px;
+  color: #64748b;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.destination-content button {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 15px;
+  border: none;
+  border-radius: 10px;
+  background: #1683c7;
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.destination-content button:hover {
+  background: #0f6fae;
+  transform: translateY(-1px);
+}
+
+.destination-content button span {
+  font-size: 20px;
+}
+
+/* Empty search result */
+
+.empty-state {
+  max-width: 600px;
+  margin: 70px auto;
+  padding: 50px 30px;
+  text-align: center;
+  background: white;
+  border: 1px solid #e1edf7;
+  border-radius: 18px;
+  box-shadow: 0 8px 25px rgba(30, 90, 140, 0.08);
+}
+
+.empty-icon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #eaf6ff;
+  color: #1683c7;
+}
+
+.empty-state h2 {
+  margin: 0 0 10px;
+  color: #12355b;
+}
+
+.empty-state p {
+  margin: 0 0 22px;
+  color: #64748b;
+}
+
+.empty-state button {
+  padding: 11px 18px;
+  border: none;
+  border-radius: 9px;
+  background: #1683c7;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+

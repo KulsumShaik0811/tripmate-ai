@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { MapPin, CalendarDays, Wallet } from "lucide-react";
+import { destinations } from "../data/travelData";
 import TravelStyle from "./TravelStyle";
+
 
 function TripForm({
   destination,
@@ -29,6 +31,18 @@ function TripForm({
         setFormError("Please enter a destination.");
         return;
     }
+
+    const destinationExists = destinations.some(
+        (item) =>
+            item.name.toLowerCase() === destination.trim().toLowerCase()
+    );
+
+if (!destinationExists) {
+  setFormError(
+    `We don't have itinerary data for "${destination.trim()}". Please choose a destination from Explore.`
+  );
+  return;
+}
 
     if (Number(days) < 1 || Number(days) > 7) {
         setFormError("Trip duration must be between 1 and 7 days.");

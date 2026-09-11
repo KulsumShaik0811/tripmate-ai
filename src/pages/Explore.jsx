@@ -1,5 +1,5 @@
-import { Search, MapPin, Wallet, ArrowRight } from "lucide-react";
 import { useMemo, useState } from "react";
+import { Search, MapPin, Sparkles } from "lucide-react";
 import { destinations } from "../data/travelData";
 
 function Explore({ onPlanTrip }) {
@@ -12,151 +12,114 @@ function Explore({ onPlanTrip }) {
       return destinations;
     }
 
-    return destinations.filter(
-      (destination) =>
-        destination.name.toLowerCase().includes(query) ||
-        destination.country.toLowerCase().includes(query) ||
-        destination.style.toLowerCase().includes(query)
-    );
+    return destinations.filter((destination) => {
+      const name =
+        destination.name?.toLowerCase() || "";
+
+      const country =
+        destination.country?.toLowerCase() || "";
+
+      const description =
+        destination.description?.toLowerCase() || "";
+
+      return (
+        name.includes(query) ||
+        country.includes(query) ||
+        description.includes(query)
+      );
+    });
   }, [search]);
 
   return (
     <main className="explore-page">
-      <div className="explore-container">
-
-        <section className="explore-header">
-          <span className="explore-badge">
-            🌍 Discover
-          </span>
+      <section className="explore-header">
+        <div>
+          <div className="hero-badge">
+            <Sparkles size={16} />
+            Discover Your Next Adventure
+          </div>
 
           <h1>Explore Destinations</h1>
 
           <p>
-            Find your next adventure and let TripMate AI
-            plan the perfect trip for you.
+            Find inspiring places and start planning
+            your next unforgettable trip.
+          </p>
+        </div>
+
+        <div className="explore-search">
+          <Search size={20} />
+
+          <input
+            type="text"
+            value={search}
+            onChange={(event) =>
+              setSearch(event.target.value)
+            }
+            placeholder="Search destinations..."
+            maxLength={50}
+          />
+        </div>
+      </section>
+
+      {filteredDestinations.length === 0 ? (
+        <section className="empty-state">
+          <div className="empty-icon">
+            <Search size={30} />
+          </div>
+
+          <h2>No destinations found</h2>
+
+          <p>
+            We couldn't find a destination matching
+            "{search}".
           </p>
 
-          <div className="explore-search">
-            <Search size={20} />
-
-            <input
-              type="text"
-              value={search}
-              onChange={(e) => setSearch(e.target.value)}
-              placeholder="Search destinations..."
-              maxLength={60}
-            />
-
-            {search && (
-              <button
-                type="button"
-                onClick={() => setSearch("")}
-              >
-                Clear
-              </button>
-            )}
-          </div>
+          <button
+            type="button"
+            onClick={() => setSearch("")}
+          >
+            Show All Destinations
+          </button>
         </section>
+      ) : (
+        <section className="destination-grid">
+          {filteredDestinations.map((destination) => (
+            <article
+              className="destination-card"
+              key={destination.name}
+            >
+              <div className="destination-image">
+                <img
+                  src={destination.image}
+                  alt={destination.name}
+                />
+              </div>
 
-        <section className="destination-section">
-          <div className="explore-section-heading">
-            <div>
-              <h2>
-                {search
-                  ? "Search Results"
-                  : "Popular Destinations"}
-              </h2>
+              <div className="destination-content">
+                <div className="destination-location">
+                  <MapPin size={15} />
+                  {destination.country}
+                </div>
 
-              <p>
-                {filteredDestinations.length}{" "}
-                destination
-                {filteredDestinations.length !== 1
-                  ? "s"
-                  : ""}{" "}
-                available
-              </p>
-            </div>
-          </div>
+                <h2>{destination.name}</h2>
 
-          {filteredDestinations.length > 0 ? (
-            <div className="destination-grid">
-              {filteredDestinations.map(
-                (destination) => (
-                  <article
-                    className="destination-card"
-                    key={destination.name}
-                  >
-                    <div className="destination-image">
-                      <img
-                        src={destination.image}
-                        alt={destination.name}
-                      />
+                <p>{destination.description}</p>
 
-                      <span className="destination-style">
-                        {destination.style}
-                      </span>
-                    </div>
-
-                    <div className="destination-content">
-                      <div className="destination-title">
-                        <div>
-                          <h3>
-                            {destination.name}
-                          </h3>
-
-                          <p>
-                            <MapPin size={14} />
-                            {destination.country}
-                          </p>
-                        </div>
-                      </div>
-
-                      <p className="destination-description">
-                        {destination.description}
-                      </p>
-
-                      <div className="destination-budget">
-                        <Wallet size={15} />
-                        {destination.budget}
-                      </div>
-
-                      <button
-                        className="plan-destination-btn"
-                        onClick={() =>
-                          onPlanTrip(destination)
-                        }
-                      >
-                        Plan This Trip
-                        <ArrowRight size={17} />
-                      </button>
-                    </div>
-                  </article>
-                )
-              )}
-            </div>
-          ) : (
-            <div className="explore-empty">
-              <div>🔎</div>
-
-              <h2>
-                No destinations found
-              </h2>
-
-              <p>
-                Try searching for another destination,
-                country or travel style.
-              </p>
-
-              <button
-                onClick={() => setSearch("")}
-              >
-                View All Destinations
-              </button>
-            </div>
-          )}
+                <button
+                  type="button"
+                  onClick={() =>
+                    onPlanTrip(destination)
+                  }
+                >
+                  Plan This Trip
+                  <span>→</span>
+                </button>
+              </div>
+            </article>
+          ))}
         </section>
-
-      </div>
+      )}
     </main>
   );
 }
