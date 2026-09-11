@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import useLocalStorage from "./hooks/useLocalStorage";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
@@ -18,6 +18,7 @@ function App() {
     "tripmate-saved-trips",
     []
   );
+
 
   const generateTrip = async (tripData) => {
     if (loading) return;

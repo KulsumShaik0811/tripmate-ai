@@ -1,7 +1,8 @@
-import { Plane, UserCircle, Menu, X } from "lucide-react";
+import { Plane, Menu, X } from "lucide-react";
 import { useState } from "react";
 
-function Navbar({ page, setPage }) {
+function Navbar({ page, setPage}) {
+
   const [menuOpen, setMenuOpen] = useState(false);
 
   const navigate = (nextPage) => {
@@ -43,10 +44,6 @@ function Navbar({ page, setPage }) {
           >
             My Trips
           </button>
-        </div>
-
-        <div className="nav-user">
-          <UserCircle size={30} />
         </div>
 
         <button
